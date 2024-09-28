@@ -5,7 +5,9 @@ const form = document.querySelector('#add-post-form');
 // Get and show posts
 async function showPosts() {
   try {
-    const res = await fetch('http://localhost:8000/api/posts/');
+    const res = await fetch(
+      'https://coral-app-v25kq.ondigitalocean.app/api/posts/'
+    );
     if (!res.ok) {
       throw new Error('Failed to fetch posts');
     }
