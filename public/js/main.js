@@ -31,11 +31,14 @@ async function addPost(e) {
   const title = formData.get('title');
 
   try {
-    const res = await fetch('http://localhost:8000/api/posts/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title }),
-    });
+    const res = await fetch(
+      'https://coral-app-v25kq.ondigitalocean.app/api/posts/',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title }),
+      }
+    );
     if (!res.ok) {
       throw new Error('Failed to add post');
     }
